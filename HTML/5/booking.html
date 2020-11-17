@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form style="width: 50%;background-color: snow;">
+        <div class="grid-container">
+            <div>
+                <label>Flying from</label><br />
+                <select id="flyFrom" name="flyFrom">
+                    <option value="">กรุงเทพ-ดอนเมือง</option>
+                    <option value="">อุดรธานี</option>
+                </select>
+            </div>
+            <div>
+                <label>To</label><br />
+                <select id="flyTo" name="flyTo">
+                    <option value="">กรุงเทพ-ดอนเมือง</option>
+                    <option value="">อุดรธานี</option>
+                </select>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div>
+                <label>Disparting</label><br />
+                <input type="date" id="Disparting" name="Disparting">
+            </div>
+            <div>
+                <label>Returning</label><br />
+                <input type="date" id="Returning" name="Returning">
+            </div>
+        </div>
+        <div class="grid-container">
+            <div>
+                <label>Adult</label><br />
+                <select id="Adult" name="Adult">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                </select>
+            </div>
+            <div>
+                <label>Child</label><br />
+                <select id="Child" name="Child">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                </select>
+            </div>
+            <div>
+                <label>Infant</label><br />
+                <select id="Infant" name="Infant">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                </select>
+            </div>
+            <div>
+                <label style="color: red;">Currentcy</label><br />
+                <select id="Adult" name="Adult">
+                    <option value="">PKR</option>
+                    <option value="">2</option>
+                </select>
+            </div>
+            
+        </div>
+        <button type="submit" style="background-color: salmon;">SEARCH</button>
+    </form>
+</body>
+
+</html>

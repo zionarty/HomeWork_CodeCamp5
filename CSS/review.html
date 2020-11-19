@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid gray;
+        }
+
+        td,
+        th {
+            border: 1px solid gray;
+            text-align: left;
+            padding: 8px;
+        }
+
+        hr {
+            border-top: 1px dashed gray;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            width: 50%;
+            border: 5px solid gray;
+            padding: 5px;
+
+        }
+
+        .grid-item {
+            padding: 10px;
+            font-size: 20px;
+            text-align: left;
+        }
+
+        .item1 {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            background-color: whitesmoke;
+        }
+        .form-input {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Homework CSS</h1>
+    <hr />
+    <h4>1.slide 5 (review CSS) ให้สร้าง review.html แสดงเป็นตาราง</h4>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>Topic</th>
+            <th>Detail</th>
+        </tr>
+        <tr>
+            <td>1.1</td>
+            <td>CSS syntax ประกอบด้วยอะไรบ้าง</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>1.2</td>
+            <td>การเขียน CSS มีกี่แบบอะไรบ้าง</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>1.3</td>
+            <td>selector มีกี่แบบอะไรบ้าง</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>1.4</td>
+            <td>combinator มีกี่แบบอะไรบ้าง</td>
+            <td></td>
+        </tr>
+    </table><br />
+    <hr />
+    <h4>2.Slide 7 (review CSS)</h4>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>Topic</th>
+            <th>Detail</th>
+        </tr>
+        <tr>
+            <td>2.1</td>
+            <td>property และ value คืออะไรแตกต่างกันอย่างไร</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2.2</td>
+            <td>property ที่สอนใน precamp มีกี่กลุ่มอะไรบ้าง</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>2.3</td>
+            <td>value unit มีกี่ประเภทอะไรบ้างแต่ละ ประเภทคืออะไร</td>
+            <td></td>
+        </tr>
+    </table>
+    <br />
+    <hr />
+    <h4>3.สร้างตาราง</h4>
+    <!-- ---update 20201119 --- -->
+    <div class="grid-container">
+        <div class="grid-item">
+            <label>Name*:</label>
+        </div>
+        <div class="grid-item">
+            <input type="text" class="form-input">
+        </div>
+        <div class="grid-item">
+            <button>?</button>
+        </div>
+        <div class="grid-item">
+            <label>Tab text*:</label>
+        </div>
+        <div class="grid-item">
+            <input type="text" class="form-input">
+        </div>
+        <div class="grid-item">
+            <button>?</button>
+        </div>
+        <div class="grid-item">
+            <label>Url*:</label>
+        </div>
+        <div class="grid-item">
+            <label>http://www.wizehive.com/webform/</label>
+        </div>
+        <div class="grid-item">
+            <input type="text" class="form-input">
+        </div>
+        <div class="grid-item item1">
+            <label>Form Setup</label>
+        </div>
+        <div class="grid-item">
+            <label>Form:</label>
+        </div>
+        <div class="grid-item">
+            <select class="form-input">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <button>Edit</button>
+        </div>
+        <div class="grid-item">
+            <label>Logo:</label>
+        </div>
+        <div class="grid-item">
+            <label><small>no logo uploaded</small></label>
+        </div>
+        <div class="grid-item">
+            <button>Upload Logo</button>
+        </div>
+        <div class="grid-item">
+            <label>Template Text:</label>
+        </div>
+        <div class="grid-item">
+            <select class="form-input">
+                <option value="English">English</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <button>Edit</button>
+        </div>
+        <div class="grid-item">
+            <label>Review Form:</label>
+        </div>
+        <div class="grid-item">
+            <select class="form-input">
+                <option value="Default">Default</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <!-- <button>?</button> -->
+        </div>
+        <div class="grid-item">
+            <label>Review Score:</label>
+        </div>
+        <div class="grid-item">
+            <select class="form-input">
+                <option value="Rating">Rating</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <button>Reload Fields</button>
+        </div>
+        <div class="grid-item">
+            <label>Secoring Type:</label>
+        </div>
+        <div class="grid-item">
+            <select class="form-input">
+                <option value="Average">Average</option>
+            </select>
+        </div>
+        <div class="grid-item">
+            <!-- <button>?</button> -->
+        </div>
+        <div class="grid-item">
+            <label>Max Score:</label>
+        </div>
+        <div class="grid-item">
+            <input type="text" class="form-input" value="4.00">
+        </div>
+        <div class="grid-item">
+            <!-- <button>?</button> -->
+        </div>
+    </div>
+    <!-- ---update 20201119 --- --><br/>
+    <hr />
+    <h4>4.slide 15 (review CSS)</h4>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>Topic</th>
+            <th>Detail</th>
+        </tr>
+        <tr>
+            <td>4.1</td>
+            <td>value ใน display property มีอะไรบ้าง</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>4.2</td>
+            <td>grid และ flex แตกต่างกันอย่างไร</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>4.3</td>
+            <td>justify and align แตกต่างกันอย่างไร</td>
+            <td></td>
+        </tr>
+    </table>
+    <br />
+    <hr />
+    <h4>5.silde 16 (review CSS)</h4>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>Topic</th>
+            <th>Detail</th>
+        </tr>
+        <tr>
+            <td>5.1</td>
+            <td>position คืออะไร และ อะไรบ้าง</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>5.2</td>
+            <td>z-index คืออะไรใช้อย่างไร</td>
+            <td></td>
+        </tr>
+    </table>
+    <h4>Slide 17 ให้ทำตามหน้าเว็นนี้</h4>
+    <p><a
+            href="https://www.nike.com/th/men?cp=62130418954_search_%7Cth%7CCore%2BBrand%2B-%2BGN%2B-%2BPure%2B-%2BXCategory%2B-%2BNike%2BThailand%2B-%2BTM%2B-%2BGeneral%2B-%2BMens%2BLP%2B-%2BEN_TH%2B-%2BExact%7CGOOGLE%7Cnike&gclid=EAIaIQobChMIj73I0p6-5wIVzBErCh1nGgUNEAAYASAAEgKYlPD_BwE&gclsrc=aw.ds">Link</a>
+    </p>
+    <br />
+    <hr />
+    <h4>6.slide 34 media query ให้ทำตาม โจทย์</h4>
+</body>
+
+</html>

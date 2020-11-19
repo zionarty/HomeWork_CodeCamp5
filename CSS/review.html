@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review</title>
     <style>
+        * {
+            font-family: arial, sans-serif;
+            font-size: 16px;
+        }
         table {
             font-family: arial, sans-serif;
             border-collapse: collapse;
@@ -35,7 +39,6 @@
 
         .grid-item {
             padding: 10px;
-            font-size: 20px;
             text-align: left;
         }
 
@@ -44,9 +47,28 @@
             grid-column-end: 4;
             background-color: whitesmoke;
         }
+
         .form-input {
             width: 100%;
             height: 100%;
+        }
+
+        .code {
+            color: blue;
+        }
+
+        pre {
+            background-color: whitesmoke;
+            padding: 5px;
+        }
+        .col-1{
+            width: 5%;
+        }
+        .col-2{
+            width: 30%;
+        }
+        .col-3{
+            width: 80%;
         }
     </style>
 
@@ -58,53 +80,297 @@
     <h4>1.slide 5 (review CSS) ให้สร้าง review.html แสดงเป็นตาราง</h4>
     <table>
         <tr>
-            <th>Number</th>
-            <th>Topic</th>
-            <th>Detail</th>
+            <th class="col-1">Number</th>
+            <th class="col-2">Topic</th>
+            <th class="col-3">Detail</th>
         </tr>
         <tr>
             <td>1.1</td>
             <td>CSS syntax ประกอบด้วยอะไรบ้าง</td>
-            <td></td>
+            <td>
+                <label>ประกอบด้วย</label>
+                <ul>
+                    <li>Selector</li>
+                    <li>Combinator</li>
+                </ul>
+                <label><b>Example : </b>
+                    <pre class="code">h1 { color : red ;}</pre>
+                    <label><i class="code">h1</i> คือ Selector</label><br />
+                    <label><i class="code">{ color : red ; }</i> คือ Combinator</label>
+            </td>
         </tr>
         <tr>
             <td>1.2</td>
             <td>การเขียน CSS มีกี่แบบอะไรบ้าง</td>
-            <td></td>
+            <td>
+                <label>ประกอบด้วย</label>
+                <ul>
+                    <li>External CSS</li>
+                    <li>Internal CSS</li>
+                    <li>Inline CSS</li>
+                </ul>
+
+                <label><b>Example : </b><br />
+                    <ol>
+                        <li>External CSS : เพิ่ม Tag link ไปที่ไฟล์ CSS ภายใน Tag Head<br />
+                            <pre class="code">
+&lt;head&gt;<br>
+    &lt;link rel=&quot;stylesheet&quot;href=&quot;mystyle.css&quot;&gt;<br>
+&lt;/head&gt;
+                            </pre>
+                        </li>
+                        <li>Internal CSS : เพิ่ม Tag Style ภายใน Tag Head <br />
+                            <pre class="code">
+&lt;head&gt;<br>
+    &lt;style&gt;<br>
+        body {&nbsp; background-color: linen; &nbsp; }<br>
+    &lt;/style&gt;<br>
+&lt;/head&gt;
+                                </pre>
+                        </li>
+                        <li>Inline CSS : เพิ่ม Style ภายใน Tag ภายใน Tag Body<br />
+                            <pre class="code">
+&lt;body&gt;<br>
+    &lt;p style=&quot;color:red;&quot;&gtTest&lt;/p&gt<br>
+&lt;/body&gt;
+                                </pre>
+                        </li>
+                    </ol>
+            </td>
         </tr>
         <tr>
             <td>1.3</td>
             <td>selector มีกี่แบบอะไรบ้าง</td>
-            <td></td>
+            <td>
+                <label>ประกอบด้วย</label>
+                <ul>
+                    <li>Simple selectors </li>
+                    <li>Combinator selectors</li>
+                    <li>Pseudo-class selectors</li>
+                    <li>Pseudo-elements selectors</li>
+                    <li>Attribute selectors</li>
+                </ul>
+                <label><b>Example : </b></label><br />
+                <ol>
+                    <li>Simple selectors เลือกจาก ชื่อ ไอดี คลาส
+                        <ul>
+                            <li>Name
+                                <pre class="code">
+p {
+    color : red ;
+}
+                            </pre>
+                            </li>
+                            <li>Id
+                                <pre class="code">
+#para1 {
+    color : red ;
+}
+                            </pre>
+                            </li>
+                            <li>Class
+                                <pre class="code">
+.center {
+    color : red ;
+}
+                            </pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Combinator selectors เลือกจากตัวที่มีความสัมพันธ์กัน
+                        <ul>
+                            <li>Descendant Selector
+                                <pre class="code">
+div p {
+    background-color: yellow;
+}
+                                </pre>
+                            </li>
+                            <li>Child Selector
+                                <pre class="code">
+div > p {
+    background-color: yellow;
+}
+                                </pre>
+                            </li>
+                            <li>Adjacent Sibling Selector
+                                <pre class="code">
+div + p {
+    background-color: yellow;
+}
+                                </pre>
+                            </li>
+                            <li>General Sibling Selector
+                                <pre class="code">
+div ~ p {
+    background-color: yellow;
+}
+                                </pre>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Pseudo-class selectors เลือกจาก specified state
+                        <pre class="code">
+a:link {
+    color : red ;
+}
+a:hover {
+    color : blue ;
+}
+                        </pre>
+
+                    </li>
+                    <li>Pseudo-elements selectors เลือกจาก specified part
+                        <pre class="code">
+p::first-line {
+    color : red ;
+}
+                        </pre>
+                    </li>
+                    <li>Attribute selectors เลือกจากตัวที่มี Attribute
+                        <pre class="code">
+a[target] {
+    background-color: yellow;
+}
+                        </pre>
+                    </li>
+                </ol>
+            </td>
         </tr>
         <tr>
             <td>1.4</td>
             <td>combinator มีกี่แบบอะไรบ้าง</td>
-            <td></td>
+            <td>
+                <li>Combinator selectors เลือกจากตัวที่มีความสัมพันธ์กัน
+                    <ul>
+                        <li>Descendant Selector
+                            <pre class="code">
+div p {
+background-color: yellow;
+}
+                            </pre>
+                        </li>
+                        <li>Child Selector
+                            <pre class="code">
+div > p {
+background-color: yellow;
+}
+                            </pre>
+                        </li>
+                        <li>Adjacent Sibling Selector
+                            <pre class="code">
+div + p {
+background-color: yellow;
+}
+                            </pre>
+                        </li>
+                        <li>General Sibling Selector
+                            <pre class="code">
+div ~ p {
+background-color: yellow;
+}
+                            </pre>
+                        </li>
+                    </ul>
+                </li>
+            </td>
         </tr>
     </table><br />
     <hr />
     <h4>2.Slide 7 (review CSS)</h4>
     <table>
         <tr>
-            <th>Number</th>
-            <th>Topic</th>
-            <th>Detail</th>
+            <th class="col-1">Number</th>
+            <th class="col-2">Topic</th>
+            <th class="col-3">Detail</th>
         </tr>
         <tr>
             <td>2.1</td>
             <td>property และ value คืออะไรแตกต่างกันอย่างไร</td>
-            <td></td>
+            <td>
+                <ul>
+                    <li><b>Property</b> คือ ชื่อคุณสมบัติ</li>
+                    <li><b>Value</b> คือ ค่าที่กำหนด</li>
+                </ul>
+            </td>
         </tr>
         <tr>
             <td>2.2</td>
             <td>property ที่สอนใน precamp มีกี่กลุ่มอะไรบ้าง</td>
-            <td></td>
+            <td>
+                <ul>
+                    <li>เปลี่ยนสี
+                        <pre class="code">
+h2 {
+    color : blue;
+}
+                        </pre>
+                    </li>
+                    <li>เปลี่ยนขนาด
+                        <pre class="code">
+h1 {
+    font-size : 30px;
+}
+                        </pre>
+                    </li>
+                    <li>ตั้งค่า font-family
+                        <pre class="code">
+h2 {
+    font-family : sans-serif;
+}
+                        </pre>
+                    </li>
+                    <li>ปรับขนาดรูปภาพ
+                        <pre class="code">
+img {
+    width : 500px;
+}
+                        </pre>
+                    </li>
+                    <li>เพิ่มเส้นขอบ
+                        <pre class="code">
+table {
+    border : 1px solid black; 
+}
+                        </pre>
+                    </li>
+                    <li>เพิ่มสีพื้นหลัง
+                        <pre class="code">
+div {
+    background-color : green;
+}
+                        </pre>
+                    </li>
+                    <li>ปรับช่องว่าง
+                        <pre class="code">
+div {
+    padding : 5px;
+}
+                        </pre>
+                    </li>
+                    <li>ปรับระยะขอบ
+                        <pre class="code">
+div {
+    margin : 5px;
+}
+                        </pre>
+                    </li>
+                </ul>
+            </td>
         </tr>
         <tr>
             <td>2.3</td>
             <td>value unit มีกี่ประเภทอะไรบ้างแต่ละ ประเภทคืออะไร</td>
-            <td></td>
+            <td>
+                <ul>
+                    <li>cm : centimeters</li>
+                    <li>mm : millimeters</li>
+                    <li>in : inches (1in = 96px = 2.54cm)</li>
+                    <li>px : pixels (1px = 1/96th of 1in)</li>
+                    <li>pt : points (1pt = 1/72 of 1in)</li>
+                    <li>pc : picas (1pc = 12 pt)</li>
+                </ul>
+            </td>
         </tr>
     </table>
     <br />
@@ -216,29 +482,65 @@
             <!-- <button>?</button> -->
         </div>
     </div>
-    <!-- ---update 20201119 --- --><br/>
+    <!-- ---update 20201119 --- --><br />
     <hr />
     <h4>4.slide 15 (review CSS)</h4>
     <table>
         <tr>
-            <th>Number</th>
-            <th>Topic</th>
-            <th>Detail</th>
+            <th class="col-1">Number</th>
+            <th class="col-2">Topic</th>
+            <th class="col-3">Detail</th>
         </tr>
         <tr>
             <td>4.1</td>
             <td>value ใน display property มีอะไรบ้าง</td>
-            <td></td>
+            <td>
+                <ul>
+                    <li>inline</li>
+                    <li>block</li>
+                    <li>contents</li>
+                    <li>flex</li>
+                    <li>grid</li>
+                    <li>inline-block</li>
+                    <li>inline-flex</li>
+                    <li>inline-grid</li>
+                    <li>inline-table</li>
+                    <li>list-item</li>
+                    <li>run-in</li>
+                    <li>table</li>
+                    <li>table-caption</li>
+                    <li>table-column-group</li>
+                    <li>table-header-group</li>
+                    <li>table-footer-group</li>
+                    <li>table-row-group</li>
+                    <li>table-cell</li>
+                    <li>table-column</li>
+                    <li>table-row</li>
+                    <li>none</li>
+                    <li>initial</li>
+                    <li>inherit</li>
+                </ul>
+            </td>
         </tr>
         <tr>
             <td>4.2</td>
             <td>grid และ flex แตกต่างกันอย่างไร</td>
-            <td></td>
+            <td>
+                <ul>
+                    <li>CSS Grid เอาไว้ทำ Layout</li>
+                    <li>CSS Flex เอาไว้จัดการของที่อยู่ในแถว</li>
+                </ul>
+            </td>
         </tr>
         <tr>
             <td>4.3</td>
             <td>justify and align แตกต่างกันอย่างไร</td>
-            <td></td>
+            <td>
+                <ul>
+                    <li>justify คือจัดให้ทั้งซ้ายและขวา ตรงข้ามกันหมด โดยเพิ่มช่องว่างระหว่างคำเพื่อให้ทั้งสองด้านตรงกันหมด</li>
+                    <li>align คือ จัดให้ชิดซ้าย ขวา หรือวางตรงกลางข้อความ ใช้ค่าเฉพาะคือ left , right, center , justify มีค่า Default คือ left</li>
+                </ul>
+            </td>
         </tr>
     </table>
     <br />
@@ -246,19 +548,34 @@
     <h4>5.silde 16 (review CSS)</h4>
     <table>
         <tr>
-            <th>Number</th>
-            <th>Topic</th>
-            <th>Detail</th>
+            <th class="col-1">Number</th>
+            <th class="col-2">Topic</th>
+            <th class="col-3">Detail</th>
         </tr>
         <tr>
             <td>5.1</td>
             <td>position คืออะไร และ อะไรบ้าง</td>
-            <td></td>
+            <td>
+                position ใช้ระบุตำแหน่งแบบต่างๆ
+                <ol>
+                    <li>static</li>
+                    <li>relative</li>
+                    <li>absolute</li>
+                    <li>fixed</li>
+                </ol>
+            </td>
         </tr>
         <tr>
             <td>5.2</td>
             <td>z-index คืออะไรใช้อย่างไร</td>
-            <td></td>
+            <td>
+                ใช้จัดเรียง element ที่ซ้อนกัน
+                <pre class="code">
+img {
+    z-index : -1;
+}                    
+                </pre>
+            </td>
         </tr>
     </table>
     <h4>Slide 17 ให้ทำตามหน้าเว็นนี้</h4>
